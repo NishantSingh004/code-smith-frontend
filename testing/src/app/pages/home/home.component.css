@@ -1,0 +1,259 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #12343b, #e1b382, #7da87b);
+  background-size: 400% 400%; /* Smooth gradient animation */
+  animation: gradientBG 10s ease infinite;
+  overflow: hidden; /* Prevent scrollbars caused by particles */
+}
+
+/* Background Gradient Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particle Effect */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+.particles div {
+  position: absolute;
+  background: white;
+  border-radius: 60%;
+  animation: particleAnimation 15s linear infinite;
+}
+
+/* Random particle animation */
+@keyframes particleAnimation {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(45deg, #12343b, #e1b382, #7da87b);
+  padding: 40px 0;
+  color: white;
+  height: auto;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 80vh;
+}
+
+.header {
+  flex: 1;
+  max-width: 50%;
+}
+
+/* Add keyframes for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slide from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
+
+/* Apply the fade-in animation */
+.header h1.display {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease-out; /* Fade-in animation */
+}
+
+.header .leads {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-out 0.3s; /* Delay for smoother flow */
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.header .btns {
+  margin-top: 20px;
+  cursor: pointer;
+  animation: fadeIn 1.8s ease-out 0.6s; /* Delay for buttons */
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.header .btn {
+  background-color: #fff;
+  color: #12343b;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.header .btn:hover {
+  background: linear-gradient(45deg, #12343b, #e1b382); 
+  color: #fff;
+}
+
+/* Right Image Styling */
+.header-img {
+  flex: 1;
+  text-align: right;
+}
+
+.header-img img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.typing-effect {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff; 
+  font-size: 1.2em;
+  animation: typing 3s steps(12, end), blink 0.6s step-end 3s; 
+  position: relative;
+  top: 0.3em; 
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9ch; 
+  }
+}
+
+@keyframes blink {
+  from {
+    border-right-color: #fff;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .header-img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .header-img img {
+    max-width: 80%;
+  }
+
+  .header h1.display {
+    font-size: 2rem;
+  }
+
+  .header .leads {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+.content-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-top: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+    padding: 10px;
+}
+
+
+
+.fiddle-card{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 110px;
+  align-items: center;
+  background: linear-gradient(45deg, #12343b, #e1b382, #7da87b);
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  font-size: 18px;
+  padding-left: 30px;
+  width: 70%;
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 100%;
+  width: 30%;
+  align-items: center;
+  padding-right: 30px;
+  color:rgb(99, 99, 99)
+}

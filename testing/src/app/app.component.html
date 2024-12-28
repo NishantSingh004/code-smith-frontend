@@ -1,6 +1,6 @@
-<div class="container" [@fadeAnimation]="getRouteAnimationState()">
+<div class="container">
   <app-topbar></app-topbar>
-  <div class="sub-container">
+  <div class="sub-container" [@fadeAnimation]="getRouteAnimationState()">
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -20,10 +20,18 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    // component: HomeComponent,
+    loadComponent: () =>
+      import('../app/pages/home/home.component').then(
+        (mod) => mod.HomeComponent
+      ),
   },
   {
     path: 'coding/:compilerId',
-    component: CodingComponent,
+    // component: CodingComponent,
+    loadComponent: () =>
+      import('../app/pages/coding/coding.component').then(
+        (mod) => mod.CodingComponent
+      ),
   },
 ];

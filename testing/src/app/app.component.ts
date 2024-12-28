@@ -12,7 +12,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     trigger('fadeAnimation', [
       transition('* => *', [
         style({ opacity: 0 }),
-        animate(500, style({ opacity: 1 })),
+        animate(500, style({ opacity: 0 })),
       ]),
     ]),
   ],
@@ -22,7 +22,6 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
-  // Method to get the current route URL
   getRouteAnimationState() {
     return this.router.url;
   }

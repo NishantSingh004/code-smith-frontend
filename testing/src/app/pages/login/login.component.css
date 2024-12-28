@@ -1,14 +1,13 @@
-.container{
+.container {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
-  /* padding-top: 10% 0 10% 0; */
   justify-content: center;
   align-items: center;
 }
 
-.form-container{
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,41 +16,65 @@
   background-color: white;
   box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
   padding: 50px;
+  max-width: 20vw;
+
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
 }
 
-.title{
+.title {
   font-size: 22px;
   margin-bottom: 20px;
 }
 
-mat-form-field{
-  /* margin:10px; */
+mat-form-field {
   width: 20vw;
-
 }
 
-
-.buttons-container{
+.buttons-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 }
 
-.buttons-container > p{
+.buttons-container > p {
   margin-top: 10px;
 }
 
-button.login-button{
+button.login-button {
   background: linear-gradient(45deg, #12343b, #e1b382);
   color: white;
 }
 
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .container {
+    flex-direction: column; 
+  }
 
+  .form-container {
+    margin-top: 5vh; 
+    margin-bottom: 5vh;
+    padding: 30px; 
+    max-width: 80vw;
+  }
 
+  mat-form-field {
+    width: 100%; 
+  }
 
+  .title {
+    font-size: 18px; 
+  }
+
+  .buttons-container {
+    width: 100%;
+  }
+
+  button.login-button {
+    width: 100%; 
+  }
+}

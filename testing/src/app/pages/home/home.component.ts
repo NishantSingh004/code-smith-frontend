@@ -25,7 +25,6 @@ interface Compiler {
 })
 export class HomeComponent {
   private compilerService = inject(CompilerService);
-  private userService = inject(UserService);
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
 
@@ -35,7 +34,6 @@ export class HomeComponent {
     this.compilerService.getCompilers().subscribe({
       next: (res: any) => {
         this.compiles = res.response;
-        console.log(this.compiles);
         this.cdr.detectChanges(); // Detect changes explicitly
       },
     });
@@ -45,7 +43,6 @@ export class HomeComponent {
     this.compilerService.newCompiler().subscribe({
       next: (res: any) => {
         this.router.navigate(['/coding', res.response.compilerid]);
-        console.log('Compiler created:', res);
         this.cdr.detectChanges();
       },
     });
@@ -57,9 +54,6 @@ export class HomeComponent {
         this.compiles = this.compiles.filter(
           (compiler) => compiler.compilerid !== compilerId
         );
-      },
-      error: (err) => {
-        console.error(err);
       },
     });
   }

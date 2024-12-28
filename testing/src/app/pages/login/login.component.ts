@@ -53,7 +53,6 @@ export class LoginComponent {
           this.router.navigate(['/home']);
         }
       },
-      error: (err) => console.error(err),
     });
   }
 }

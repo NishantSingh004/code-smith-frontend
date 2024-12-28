@@ -34,9 +34,6 @@ import { MatSelectModule } from '@angular/material/select';
   ],
 })
 export class CodingComponent implements OnInit {
-  // @ViewChild('monacoEditor') monacoEditor!: ElementRef;
-  private monacoEditorInstance: any;
-  private monacoEditorInitialized = false;
   private router = inject(Router);
   private compilerService = inject(CompilerService);
   private route = inject(ActivatedRoute);
@@ -60,10 +57,6 @@ export class CodingComponent implements OnInit {
         this.compile = res.response;
         this.code = this.compile.code;
         this.editorOptions.language = this.compile.language;
-        console.log(this.compile);
-      },
-      error: (err) => {
-        console.log(err);
       },
     });
   }
@@ -71,12 +64,7 @@ export class CodingComponent implements OnInit {
   save() {
     this.compile.code = this.code;
     this.compilerService.save(this.compile).subscribe({
-      next: (res: any) => {
-        console.log(res);
-      },
-      error: (err) => {
-        console.log(err);
-      },
+      next: (res: any) => {},
     });
   }
 
@@ -88,15 +76,8 @@ export class CodingComponent implements OnInit {
     };
     this.compilerService.run(opts).subscribe({
       next: (res: any) => {
-        console.log('Run response:', res);
         this.stdOut = res.response.output;
-        console.log('Output:', this.stdOut);
-      },
-      error: (err) => {
-        console.error('Error in run:', err);
-      },
-      complete: () => {
-        console.log('Run observable completed');
+        console.log(this.stdOut);
       },
     });
   }
@@ -105,10 +86,6 @@ export class CodingComponent implements OnInit {
     this.compilerService.delete(this.compile.compileid).subscribe({
       next: (res: any) => {
         this.router.navigate(['/home']);
-        console.log(res);
-      },
-      error: (err) => {
-        console.log(err);
       },
     });
   }

@@ -48,7 +48,6 @@ export class CreateAccountComponent implements OnInit {
     }
     this.userService.createAccount(this.createAccountForm.value).subscribe({
       next: (res: any) => {
-        console.log(res);
         if (!res.error) {
           this.userService.user = res.response;
           localStorage.setItem('user', JSON.stringify(res.response));
@@ -58,7 +57,6 @@ export class CreateAccountComponent implements OnInit {
         }
       },
       error: (err) => {
-        console.log(err);
         alert('An error occurred. Please try again later.');
       },
     });

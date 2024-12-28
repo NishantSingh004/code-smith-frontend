@@ -1,1 +1,2 @@
+testing/* filter=lfs diff=lfs merge=lfs -text
 src/environments/* filter=lfs diff=lfs merge=lfs -text

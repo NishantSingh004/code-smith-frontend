@@ -7,12 +7,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
   selector: 'app-root',
   imports: [TopbarComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'], // corrected from styleUrl to styleUrls
   animations: [
     trigger('fadeAnimation', [
       transition('* => *', [
         style({ opacity: 0 }),
-        animate(500, style({ opacity: 0 })),
+        animate(500, style({ opacity: 1 })), // corrected the final opacity to 1
       ]),
     ]),
   ],

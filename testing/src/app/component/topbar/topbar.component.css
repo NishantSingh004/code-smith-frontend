@@ -20,7 +20,7 @@
     letter-spacing: 1px;
     font-size: 22px;
     padding: 10px;
-    padding-left: 20px;
+    padding-left: 90px;
   }
   .profile-container{
     display: flex;
@@ -33,4 +33,16 @@
     cursor: pointer;
     background: none;
     border: none;
+  }
+
+  @media screen and (min-width: 128px) and (max-width: 900px) {
+    .nav-container{
+      max-width: 100%;
+    }
+    .branding{
+      
+      padding-left: 20px;
+    }
+  
+  
   }

@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #12343b, #e1b382, #7da87b);
+  background-size: 400% 400%; 
+  animation: gradientBG 10s ease infinite;
+  overflow: hidden; 
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden; 
+}
+
+.particles div {
+  position: absolute;
+  background: white;
+  border-radius: 60%;
+  animation: particleAnimation 15s linear infinite;
+}
+
+@keyframes particleAnimation {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+header {
+  background: linear-gradient(45deg, #12343b, #e1b382, #7da87b);
+  padding: 40px 0;
+  color: white;
+  height: auto;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 80vh;
+}
+
+.header {
+  flex: 1;
+  max-width: 50%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+.header h1.display {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease-out; 
+}
+
+.header .leads {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-out 0.3s; 
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.header .btns {
+  margin-top: 20px;
+  cursor: pointer;
+  animation: fadeIn 1.8s ease-out 0.6s; 
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.header .btn {
+  background-color: #fff;
+  color: #12343b;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.header .btn:hover {
+  background: linear-gradient(45deg, #12343b, #e1b382); 
+  color: #fff;
+}
+
+
+.header-img {
+  flex: 1;
+  text-align: right;
+}
+
+.header-img img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.typing-effect {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff; 
+  font-size: 1.2em;
+  animation: typing 3s steps(12, end), blink 0.6s step-end 3s; 
+  position: relative;
+  top: 0.3em; 
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9ch; 
+  }
+}
+
+@keyframes blink {
+  from {
+    border-right-color: #fff;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.content-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-top: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+    padding: 10px;
+}
+
+
+
+.fiddle-card{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 110px;
+  align-items: center;
+  background: linear-gradient(45deg, #12343b, #e1b382, #7da87b);
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  font-size: 18px;
+  padding-left: 30px;
+  width: 70%;
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 100%;
+  width: 30%;
+  align-items: center;
+  padding-right: 30px;
+  color:rgb(99, 99, 99)
+}
+
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header {
+    max-width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .header-img img {
+    max-width: 80%;
+  }
+
+  .header h1.display {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+  }
+
+  .header .leads {
+    font-size: 1rem;
+  }
+
+  .sub-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .header {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .content-wrapper {
+    width: 90vw; 
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .fiddle-card {
+    flex-direction: column;
+    width: 100%; 
+  }
+
+  .title {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+    padding-right: 0;
+    margin-top: 10px;
+  }
+
+  .header .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .sub-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    text-align: center; 
+    padding: 20px; 
+  }
+
+  .header {
+    max-width: 100%; 
+  }
+
+  .header h1.display {
+    font-size: 1.5rem; 
+    text-align: center; 
+    display: block; 
+  }
+
+  .header .leads {
+    font-size: 1rem; 
+    margin-bottom: 20px; 
+  }
+
+  .btns {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    margin-bottom: 20px; 
+  }
+
+  .header-img {
+    width: 100%; 
+    text-align: center; 
+    margin-top: 20px; 
+  }
+
+  .header-img img {
+    max-width: 80%; 
+    height: auto; 
+  }
+
+  .content-wrapper {
+    width: 90%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px;
+    text-align: center; 
+  }
+
+  .fiddle-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+
+  .fiddle-card .title {
+    margin-bottom: 10px; 
+  }
+
+  .fiddle-card .actions {
+    display: flex;
+    justify-content: center; 
+  }
+}

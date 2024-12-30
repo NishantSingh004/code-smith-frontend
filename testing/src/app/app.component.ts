@@ -18,7 +18,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ],
 })
 export class AppComponent {
-  title = 'testing';
+  title = 'Code Smith';
 
   constructor(private router: Router) {}
 

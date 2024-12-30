@@ -311,7 +311,6 @@ header {
     font-size: 24px; /* Fixed font size */
     text-align: center; 
     display: block; 
-    border: 1px solid red;
     width: 300px; /* Fixed width */
     margin: 0 auto; /* Center-align for fixed width */
     margin-bottom: 1rem;

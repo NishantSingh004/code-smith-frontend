@@ -48,7 +48,7 @@ export class CodingComponent implements OnInit {
   };
 
   code: string = 'function x() {\nconsole.log("Hello world!");\n}';
-  stdOut = 'Run the code to get code';
+  stdOut = 'Run the code to get output';
 
   ngOnInit(): void {
     this.compileid = this.route.snapshot.paramMap.get('compilerId');
